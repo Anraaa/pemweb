@@ -152,7 +152,7 @@ location /latihan {
 
 # 4. Penjelasan Terkait HTML
 
-## 1. Tag div
+## 1. Tag **div**
 
 Tag <div></div> digunakan untuk membagi atau mengelompokkan elemen lainnya
 
