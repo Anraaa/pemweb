@@ -1,0 +1,70 @@
+.main {
+    margin-top: 85px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+
+.textbox {
+    background-color: #FF8A8A;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+   /*  text-align: center; */
+    border-radius: 10px;
+}
+
+.name {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.date {
+    font-size: 25px;
+}
+
+.campuss {
+    font-size: 25px;
+}
+
+.second {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 40px;
+}
+
+.chart {
+    background-color: rgb(255, 243, 243);
+    border-radius: 20px;
+    width: 50%;
+    display: flex;
+}
+
+th {
+    background-color: #FF8A8A;
+}
+
+tr:hover {background-color: rgb(160, 160, 160);}
+
+
+table, th, td {
+    border-bottom: 2px solid white;
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+table {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.footer{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
