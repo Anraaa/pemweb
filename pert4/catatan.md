@@ -381,8 +381,57 @@ class Footer extends Model
 
 ---
 
+## Migrasi ke Database dan Insert Data Dummy Pada Seeder
+
+`php artisan migrate`, setelah itu lakukan `php artisan db:seed`
+
+kalo ada yang error, fix sendiri ya
+
 # Filament Resource
 
-php artisan make:filament-resource Product --generate
+Seletah melakukan migrasi data dan insert data dummy/data testing, lakukan filament resource dengan cara `php artisan make:filament-resource Product --generate` lakuin itu semua ke product, dll
 
-lakuin itu semua ke product, dll
+# Resource Views
+
+jujur bagian ini gua males nyusunnya
+
+## Livewire
+
+generate livewire untuk show home page
+
+`php artisan make:livewire ShowHomePage`
+
+## Routing 
+
+lakukan routing agar livewire bisa digunakan di `Routes/web.php`
+```php
+<?php
+
+use App\Livewire\ShowHomePage;
+use Illuminate\Support\Facades\Route;
+use Livewire\Livewire;
+
+/* NOTE: Do Not Remove
+/ Livewire asset handling if using sub folder in domain
+*/
+Livewire::setUpdateRoute(function ($handle) {
+    return Route::post(config('app.asset_prefix') . '/livewire/update', $handle);
+});
+
+Livewire::setScriptRoute(function ($handle) {
+    return Route::get(config('app.asset_prefix') . '/livewire/livewire.js', $handle);
+});
+/*
+/ END
+*/
+/* Route::get('/', function () {
+    return view('welcome');
+}); */
+
+Route::get('/', ShowHomePage::class)->name('home');
+
+```
+
+## Partials
+
+copas ajalah dari github gua. males gua nyusunnya
