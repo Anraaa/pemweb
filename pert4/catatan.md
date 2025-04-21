@@ -434,4 +434,4 @@ Route::get('/', ShowHomePage::class)->name('home');
 
 ## Partials
 
-copas ajalah dari github gua. males gua nyusunnya
+sisanya copas ajalah dari github gua. males gua nyusunnya
