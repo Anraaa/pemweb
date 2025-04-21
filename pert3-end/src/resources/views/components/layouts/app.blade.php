@@ -6,7 +6,9 @@
 
 <body>
 @include('components.partials.navbar')
+<!-- navigation -->
 
+<!-- /navigation -->
 
 {{ $slot }}
 
