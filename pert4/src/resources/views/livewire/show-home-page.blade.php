@@ -101,7 +101,8 @@
                   alt="{{ $item->name }}"
                   class="img-fluid w-100 transition-transform duration-300 ease-in-out"
                   style="object-fit: cover; height: 100%;"
-                  
+                  onmouseover="this.style.transform='scale(1.05)'"
+                  onmouseout="this.style.transform='scale(1)'"
                   >
                 </div>
               @endif
