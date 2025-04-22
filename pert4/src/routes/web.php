@@ -1,6 +1,8 @@
 <?php
 
 use App\Livewire\ShowHomePage;
+use App\Livewire\ShowProfile;
+use App\Livewire\ShowAbout;
 use Illuminate\Support\Facades\Route;
 use Livewire\Livewire;
 
@@ -22,3 +24,5 @@ Livewire::setScriptRoute(function ($handle) {
 }); */
 
 Route::get('/', ShowHomePage::class)->name('home');
+ROute::get('/profile', ShowProfile::class)->name('profile');
+Route::get('/about', ShowAbout::class)->name('about');

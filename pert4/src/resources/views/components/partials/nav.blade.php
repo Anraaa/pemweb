@@ -16,6 +16,8 @@ $logo = \App\Models\Logo::first();
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav m-auto mb-2 mb-lg-0">
 					<li class="nav-item"> <a wire:navigate class="nav-link" href="{{ route ('home') }}">Home</a></li>
+					<li class="nav-item"> <a wire:navigate class="nav-link" href="{{ route ('profile') }}">Profile</a></li>
+					<li class="nav-item"> <a wire:navigate class="nav-link" href="{{ route ('about') }}">About Me</a></li>
 				</ul>
 			</div>
 		</div>

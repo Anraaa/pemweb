@@ -17,7 +17,20 @@ class LogoResource extends Resource
 {
     protected static ?string $model = Logo::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-photo';
+    protected static ?string $navigationGroup = 'Setting';
+    protected static ?string $navigationLabel = 'Logo Setting';
+    protected static ?string $breadcrumb = ' Logo Setting Manager';
+    protected static ?string $pluralLabel = 'Logo Setting';
+    public static function getNavigationSort(): ?int
+    {
+        return crc32(static::getNavigationLabel()) % 100;
+    }
+
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
 
     public static function form(Form $form): Form
     {

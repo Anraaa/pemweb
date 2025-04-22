@@ -17,7 +17,20 @@ class PageConfigResource extends Resource
 {
     protected static ?string $model = PageConfig::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-wrench-screwdriver';
+    protected static ?string $navigationIcon = 'heroicon-o-cog-6-tooth';
+    protected static ?string $navigationGroup = 'Setting';
+    protected static ?string $navigationLabel = 'Page Config Setting';
+    protected static ?string $breadcrumb = ' Page Config Setting Manager';
+    protected static ?string $pluralLabel = 'Page Config Setting';
+    public static function getNavigationSort(): ?int
+    {
+        return crc32(static::getNavigationLabel()) % 100;
+    }
+
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
 
     public static function form(Form $form): Form
     {

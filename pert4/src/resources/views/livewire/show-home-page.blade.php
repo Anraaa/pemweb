@@ -3,6 +3,10 @@
   $config = PageConfig::first();
 @endphp
 
+@php
+  use App\Models\Product;
+  $product = Product::orderBy('id')->get();
+@endphp
 <main>
 <section class="banner bg-tertiary position-relative overflow-hidden">
   <div class="container">
@@ -79,10 +83,35 @@
         <div class="section-title pt-4">
           <p class="text-primary text-uppercase fw-bold mb-3">Our Services</p>
           <h1>Our online services</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipreiscing elit. Lacus pena tibus tincidunt</p>
+          <p>Explore a range of digital services designed to simplify your daily needs. Fast, secure, and accessible anytime, anywhere.</p>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 service-item">
+
+      @foreach ($product as $index => $item)
+        <div class="col-lg-4 col-md-6 service-item">
+          <a class="text-black text-decoration-none" href="#">
+            <div class="block">
+              <span class="colored-box text-center h3 mb-4">{{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}</span>
+              @if ($item->image)
+                <div class="overflow-hidden rounded-lg shadow-lg" style="max-height: 400px;">
+                  <img
+                  loading="lazy"
+                  decoding="async"
+                  src="{{ asset('storage/' . $item->image) }}"
+                  alt="{{ $item->name }}"
+                  class="img-fluid w-100 transition-transform duration-300 ease-in-out"
+                  style="object-fit: cover; height: 100%;"
+                  
+                  >
+                </div>
+              @endif
+            </div>
+            <h3 class="mb-3 service-title">{{ $item->name }}</h3>
+            <p class="mb-0 service-description">{{ $item->description }}</p>
+          </a>
+        </div>
+      @endforeach
+      <!-- <div class="col-lg-4 col-md-6 service-item">
         <a class="text-black" href="service-details.html">
           <div class="block"> <span class="colored-box text-center h3 mb-4">01</span>
             <h3 class="mb-3 service-title">Digital Marketing</h3>
@@ -126,7 +155,7 @@
               eirmod</p>
           </div>
         </a>
-      </div>
+      </div> -->
     </div>
   </div>
 </section>

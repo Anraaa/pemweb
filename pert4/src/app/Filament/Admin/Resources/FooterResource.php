@@ -17,7 +17,20 @@ class FooterResource extends Resource
 {
     protected static ?string $model = Footer::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-link';
+    protected static ?string $navigationGroup = 'Setting';
+    protected static ?string $navigationLabel = 'Footer Setting';
+    protected static ?string $breadcrumb = ' Footer Setting Manager';
+    protected static ?string $pluralLabel = 'Footer Setting';
+    public static function getNavigationSort(): ?int
+    {
+        return crc32(static::getNavigationLabel()) % 100;
+    }
+
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
 
     public static function form(Form $form): Form
     {
